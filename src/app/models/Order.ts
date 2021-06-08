@@ -54,7 +54,9 @@ export class Order{
     }
     //debugger
     this.updateTotal();
-    this.orderId = this.addIdToOrder();
+    if(this.orderId == null){
+      this.orderId = this.addIdToOrder();
+    }
   }
 
   private addIdToOrder(): number{
