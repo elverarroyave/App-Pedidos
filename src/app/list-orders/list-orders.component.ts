@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
 import { Order } from '../models/Order';
 import { OrdersService } from '../services/orders.service';
 
@@ -10,7 +11,7 @@ import { OrdersService } from '../services/orders.service';
 export class ListOrdersComponent implements OnInit {
 
   listOrders: Array<Order> = new Array<Order>();
-  constructor(public orderService: OrdersService) { }
+  constructor(public orderService: OrdersService, private ruta: Router) { }
 
   ngOnInit(): void {
     this.listOrders = this.orderService.listOrders;
@@ -20,6 +21,10 @@ export class ListOrdersComponent implements OnInit {
   deleteOrder(i: number){
     this.orderService.deleteOrder(i);
     this.listOrders = this.orderService.listOrders;
+  }
+
+  veiwDetail(orderId: number){
+    this.ruta.navigateByUrl('/order-client/' + orderId);
   }
 
 }

@@ -5,6 +5,7 @@ import { AddProductsComponent } from './add-products/add-products.component';
 import { ClientsComponent } from './clients/clients.component';
 import { HomeComponent } from './home/home.component';
 import { ListOrdersComponent } from './list-orders/list-orders.component';
+import { OrderDetailComponent } from './order-detail/order-detail.component';
 import { OrdersComponent } from './orders/orders.component';
 
 import { ProductsComponent } from './products/products.component';
@@ -27,6 +28,9 @@ const routes: Routes = [
   },
   {
     path: 'list-orders', component: ListOrdersComponent
+  },
+  {
+    path: 'order-client/:id', component: OrderDetailComponent
   }
 ];
 

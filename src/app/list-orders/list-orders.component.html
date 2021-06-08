@@ -8,7 +8,7 @@
           <h6 class="card-subtitle mb-2 text-muted">ID Pedido:{{order.orderId}}</h6>
           <p class="card-text">Toral: {{order.total | currency: "$"}}</p>
           <p class="card-text">Productos: {{order.orderDetail.length}}</p>
-          <button class="btn btn-warning">Detalle</button>
+          <button class="btn btn-warning" (click)="veiwDetail(order.orderId)">Detalle</button>
           <button class="btn btn-danger" (click)="deleteOrder(order.orderId)">Eliminar</button>
         </div>
       </div>
