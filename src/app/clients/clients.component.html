@@ -1,0 +1,17 @@
+<div class="container">
+  <h1>Clientes</h1>
+  <button (click)="saveClient()" class="btn btn-primary" >Guardar Cliente</button>
+  <button (click)="saveProducts()" class="btn btn-primary" >Guardar Productos</button>
+
+  <button (click)="deleteClients()" class="btn btn-danger" >Eliminar Clientes</button>
+  <button (click)="deleteProducts()" class="btn btn-danger" >Eliminar Productos</button>
+  <button (click)="deleteAll()" class="btn btn-danger" >Eliminar todos</button>
+  <div class="list clients" *ngFor='let client of localClients'>
+    <!-- <p>Cliente: {{client.name}}</p>
+    <p>Edada: {{client.age}}</p> -->
+  </div>
+  <div class="list products" *ngFor='let product of localProducts'>
+    <p>Cliente: {{product.name}}</p>
+    <p>Edada: {{product.price | currency: '$'}}</p>
+  </div>
+</div>

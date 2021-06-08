@@ -1,0 +1,16 @@
+<div class="container">
+  <div class="row mt-4 mb-4">
+    <div class="col-sm-3" *ngFor="let order of listOrders">
+      <div class="card mt-2 mb-2">
+        <div class="card-body">
+          <h5 class="card-title name">{{order.clientName}}</h5>
+          <h6 class="card-subtitle mb-2 text-muted">ID Pedido:{{order.orderId}}</h6>
+          <p class="card-text">Toral: {{order.total | currency: "$"}}</p>
+          <p class="card-text">Productos: {{order.orderDetail.length}}</p>
+          <button class="btn btn-warning">Detalle</button>
+          <button class="btn btn-danger" (click)="deleteOrder(order.orderId)">Eliminar</button>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
