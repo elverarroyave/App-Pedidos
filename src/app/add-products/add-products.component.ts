@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
+import Swal from 'sweetalert2';
 import { Product } from '../models/Product';
 import { ProductsService } from '../services/products.service';
 
@@ -23,6 +24,13 @@ export class AddProductsComponent implements OnInit {
 
 
   addProduct(){
+    Swal.fire(
+      {
+        title:'¡Agregado!',
+        icon: 'success',
+        showConfirmButton: true,
+      }
+    )
     this.productService.addLocalStorage(this.formGroup.value);
     this.formGroup.reset();
   }

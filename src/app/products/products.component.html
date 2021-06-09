@@ -16,7 +16,7 @@
           <p class="card-text">{{product.description}}</p>
           <h5 class="card-text">{{product.price | currency: '$'}}</h5>
           <button class="btn btn-primary" (click)="addToCart(product)">Agregar</button>
-          <button class="btn btn-danger" (click)="deleteProduct(product.idProduct)">Eliminar</button>
+          <button class="btn btn-danger" (click)="deleteProduct(product)">Eliminar</button>
         </div>
       </div>
     </div>

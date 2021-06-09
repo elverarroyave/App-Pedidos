@@ -3,6 +3,8 @@ import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { Router } from '@angular/router';
 import { Client } from '../models/Client';
 import { ClientsService } from '../services/clients.service';
+import Swal from 'sweetalert2';
+import { timer } from 'rxjs';
 
 @Component({
   selector: 'app-add-clients',
@@ -29,6 +31,14 @@ export class AddClientsComponent implements OnInit {
     this.client=this.formGroup.value as Client;
     this.clientService.addLocalStorage(this.client);
     this.formGroup.reset();
+    Swal.fire(
+      {
+        title:'¡Agregado!',
+        text: `${this.client.name} ahora es tu cliente.`,
+        icon: 'success',
+        showConfirmButton: true,
+      }
+    )
     this.ruta.navigateByUrl('/');
   }
 

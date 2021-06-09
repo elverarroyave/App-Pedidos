@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import Swal from 'sweetalert2';
 import { OrderDetails } from '../models/OrderDetails';
 import { OrdersService } from '../services/orders.service';
 
@@ -21,6 +22,11 @@ export class OrdersComponent implements OnInit {
 
   saveShoping(){
     this.orderService.saveOrder();
+    Swal.fire(
+      'Pedido Realizado!',
+      'Ahora lo puedes ver en tu lista de pedidos.',
+      'success'
+    )
   }
 
   delete(i: number){

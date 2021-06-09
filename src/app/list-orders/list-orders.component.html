@@ -9,7 +9,7 @@
           <p class="card-text">Toral: {{order.total | currency: "$"}}</p>
           <p class="card-text">Productos: {{order.orderDetail.length}}</p>
           <button class="btn btn-warning" (click)="veiwDetail(order.orderId)">Detalle</button>
-          <button class="btn btn-danger" (click)="deleteOrder(order.orderId)">Eliminar</button>
+          <button class="btn btn-danger" (click)="deleteOrder(order)">Eliminar</button>
         </div>
       </div>
     </div>
