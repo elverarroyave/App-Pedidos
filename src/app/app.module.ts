@@ -16,6 +16,7 @@ import { ProductsService } from './services/products.service';
 import { OrdersService } from './services/orders.service';
 import { ListOrdersComponent } from './list-orders/list-orders.component';
 import { OrderDetailComponent } from './order-detail/order-detail.component';
+import { AutoFocusDirectiveDirective } from './focus/auto-focus-directive.directive';
 
 @NgModule({
   declarations: [
@@ -28,7 +29,8 @@ import { OrderDetailComponent } from './order-detail/order-detail.component';
     AddClientsComponent,
     AddProductsComponent,
     ListOrdersComponent,
-    OrderDetailComponent
+    OrderDetailComponent,
+    AutoFocusDirectiveDirective
   ],
   imports: [
     BrowserModule,

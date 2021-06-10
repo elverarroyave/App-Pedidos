@@ -4,7 +4,6 @@ import { Router } from '@angular/router';
 import { Client } from '../models/Client';
 import { ClientsService } from '../services/clients.service';
 import Swal from 'sweetalert2';
-import { timer } from 'rxjs';
 
 @Component({
   selector: 'app-add-clients',
@@ -13,11 +12,15 @@ import { timer } from 'rxjs';
 })
 export class AddClientsComponent implements OnInit {
 
+  private focus = true;
   formGroup: FormGroup;
 
   client: Client = new Client();
 
-  constructor(private fb: FormBuilder, public clientService: ClientsService, private ruta: Router) { }
+  constructor(
+    private fb: FormBuilder, 
+    public clientService: ClientsService, 
+    private ruta: Router) { }
 
   ngOnInit(): void {
     this.formGroup = this.fb.group({
