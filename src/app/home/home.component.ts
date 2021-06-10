@@ -13,6 +13,10 @@ import { OrdersService } from '../services/orders.service';
 export class HomeComponent implements OnInit {
 
   clients :Array<Client> = new Array<Client>();
+  input = {
+    result: true,
+    value: ''
+  }
   constructor(
     public clientsService: ClientsService, 
     public orderService: OrdersService,
@@ -27,9 +31,13 @@ export class HomeComponent implements OnInit {
     this.clients = this.clientsService.clientsLocalStorage.filter(client =>{
       return client.name.toLowerCase().includes(event.target.value.toLowerCase()) || client.lastName.toLowerCase().includes(event.target.value.toLowerCase())
     })
+    this.input.value = `"${event.target.value}"`;
+    this.clients.length == 0
+    ?this.input.result = false
+    :this.input.result = true
   }
 
-  deleteClient(clientToDelete:Client ){
+  deleteClient(clientToDelete:Client){
     Swal.fire({
       title: `¿Eliminar a ${clientToDelete.name}?`,
       showDenyButton: false,

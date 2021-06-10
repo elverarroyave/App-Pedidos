@@ -13,6 +13,11 @@ export class ProductsComponent implements OnInit {
 
   products: Array<Product> = new Array();
 
+  input = {
+    result: true,
+    value: ''
+  }
+
   constructor(
     public productService: ProductsService,
     public orderService: OrdersService
@@ -45,6 +50,10 @@ export class ProductsComponent implements OnInit {
     this.products = this.productService.productsLocalStorage.filter(product =>{
       return product.name.toLowerCase().includes(event.target.value.toLowerCase())
     })
+    this.input.value = `"${event.target.value}"`;
+    this.products.length == 0
+    ?this.input.result = false
+    :this.input.result = true
   }
 
   addToCart(product:Product){
