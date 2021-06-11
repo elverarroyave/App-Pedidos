@@ -6,6 +6,7 @@ export class Order{
   clientId: number
   clientName: string
   total: number 
+  date: Date
   orderDetail: Array<OrderDetails>
 
   constructor(dates?: Order)
@@ -24,6 +25,7 @@ export class Order{
     this.clientId = this.clientId
     this.clientName = this.clientName
     this.total = this.total
+    this.date = this.date
     this.orderDetail = new Array<OrderDetails>();
   }
 

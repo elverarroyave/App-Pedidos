@@ -1,8 +1,9 @@
 <div class="container mt-5">
   <h1 class="title mb-2">Detalles del Pedido con ID:{{this.rutaActiva.snapshot.params.id}}</h1>
-  <h3 class="mb-2">Cliente: {{order.clientName}}</h3>
+  <h3 class="mb-2 mt-2">Cliente: {{order.clientName}}</h3>
   <h3 class="mb-2">ID de cliente: {{order.clientId}}</h3>
-  <div class="table-responsive">
+  <h3 class="mb-2 mt-2">Fecha del pedido: {{order.date | date: 'medium'}}</h3>
+  <div class="table-responsive mt-4">
     <table class="table table-hover table-striped">
       <thead class="table-dark">
         <tr>

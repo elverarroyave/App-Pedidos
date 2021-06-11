@@ -69,4 +69,8 @@ export class ProductsComponent implements OnInit {
     })
   }
 
+  inSideCard(){
+    console.log('Inside card')
+  }
+
 }

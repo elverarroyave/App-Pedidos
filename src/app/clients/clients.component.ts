@@ -12,17 +12,10 @@ export class ClientsComponent implements OnInit {
   constructor() { }
 
   ngOnInit(): void {
-    // this.clients.push(new Client('Maria','Eugenia',48))
-    // this.clients.push(new Client('Elver','Arroyave',24))
-
-    // this.products.push(new Product('Jabon', 1500))
-    // this.products.push(new Product('Detergente 1k', 6000))
   }
 
   saveClient(){
     let clientsToSave:  Array<Client> = new Array<Client>();
-    // clientsToSave.push(new Client('Maria','Eugenia',48))
-    // clientsToSave.push(new Client('Elver','Arroyave',24))
     localStorage.setItem("clients", JSON.stringify(clientsToSave));
   }
 

@@ -30,6 +30,10 @@ export class OrdersService {
 
   saveOrder(){
     let listOrders: Order[] = this.listOrders
+    this.order.date = new Date()
+
+    console.log(this.order)
+    
     listOrders.push(this.order);
     localStorage.setItem("orders", JSON.stringify(listOrders))
     localStorage.removeItem('lastOrder');

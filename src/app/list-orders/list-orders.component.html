@@ -6,8 +6,9 @@
         <div class="card-body">
           <h5 class="card-title name">{{order.clientName}}</h5>
           <h6 class="card-subtitle mb-2 text-muted">ID Pedido:{{order.orderId}}</h6>
-          <p class="card-text">Toral: {{order.total | currency: "$"}}</p>
+          <h6 class="card-text">Fecha: {{order.date | date: 'short'}}</h6>
           <p class="card-text">Productos: {{order.orderDetail.length}}</p>
+          <h5>Total: {{order.total | currency: "$"}}</h5>
           <button class="btn btn-warning" (click)="veiwDetail(order.orderId)">Detalle</button>
           <button class="btn btn-danger" (click)="deleteOrder(order)">Eliminar</button>
         </div>

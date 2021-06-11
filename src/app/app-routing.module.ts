@@ -2,7 +2,6 @@ import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 import { AddClientsComponent } from './add-clients/add-clients.component';
 import { AddProductsComponent } from './add-products/add-products.component';
-import { ClientsComponent } from './clients/clients.component';
 import { HomeComponent } from './home/home.component';
 import { ListOrdersComponent } from './list-orders/list-orders.component';
 import { OrderDetailComponent } from './order-detail/order-detail.component';
